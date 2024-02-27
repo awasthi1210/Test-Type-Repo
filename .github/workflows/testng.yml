@@ -10,11 +10,11 @@ jobs:
     - name: Checkout repository
       uses: actions/checkout@v2
 
-    # - name: Publish Test Results
-    #   uses: actions/upload-artifact@v2
+    # - name:Publish Test Re sults
+    #   uses: actions/upload-artifact @v2
     #   with:
-    #     name: test-results # Name for the artifact
-    #     path: '**/xun it.xml' # Use a wildcard pattern to match all xunit.xml files
+    #     name: test-results #Name for the artifact
+    #     path: '**/xunit.xml' #Use a wildcard pattern to match all xunit.xml files
 
   test:
         name: Test
@@ -37,7 +37,7 @@ jobs:
                   context-github: ${{ toJSON(github) }}
                   # XUnit xml report file name with path
                   xml-report-filename: JestFolder/jest-junit.xml 
-                  #valid-nunit.xml # invalid_test_type.xml  #valid-nunit.xml#invalid_test_type.xml #testResultsFolder/ #valid-xunit.xml  #testng.xml #valid-nunit.xml #testng.xml  #valid-nunit.xml #valid-MSTest.trx #testng.xml #valid-xunit.xml 
+                  #valid-nunit.xml # invalid_test_type.xml #valid-nunit.xml#invalid _test_type.xml #testResultsFolder/ #valid-xunit.xml  #testng.xml #valid-nunit.xml #testng.xml  #valid-nunit.xml #valid-MSTest.trx #testng.xml #valid-xunit.xml 
   sonarScan:
    name: 'Sonar Scan'
    needs: test
