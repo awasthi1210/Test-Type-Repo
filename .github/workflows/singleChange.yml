@@ -2,7 +2,7 @@ name: GitHub Single Change
  # This workflow uses ServiceNow custom actions that are certified by ServiceNow.
 on: workflow_dispatch 
   # push:
-  #  branches:  ["main" ]
+  #  branches:  ["main" ] 
   # pull_request:
   #   branches: [ "main" ]
   #   types: [opened, synchronize,reopened]
