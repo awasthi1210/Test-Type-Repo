@@ -215,7 +215,7 @@ jobs:
   #     - name: Run deployment scripts
   #       run: echo Completed Deployment
 
-   change:
+  change:
     name: Change Request
     needs: registerPackage
     runs-on: ubuntu-latest
@@ -234,7 +234,7 @@ jobs:
           interval: '100'
           timeout: '3600'
 
-    getchange:
+  getchange:
     # jobs that  must complete successfully before this job will run
     needs: change
     # type of machine to run the job on
