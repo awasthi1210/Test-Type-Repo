@@ -37,7 +37,7 @@ jobs:
           devops-integration-user-name: '${{ secrets.SN_DEVOPS_USER }}'
           devops-integration-user-password: '${{ secrets.SN_DEVOPS_PASSWORD }}'
           # devops-integration-token: ${{ secrets.SN_DEVOPS_TOKEN }}
-          instance-url: '${{ secrets.SN_INSTANCE_URL }}'
+          instance-url: '${{ secrets.SN_INSTANCE_NAME}}'
           tool-id: '${{ secrets.SN_ORCHESTRATION_TOOL_ID }}'
           job-name: Test
           context-github: '${{ toJSON(github) }}'
