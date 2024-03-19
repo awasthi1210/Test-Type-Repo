@@ -24,23 +24,23 @@ jobs:
           path: ~/.m2
           key: '${{ runner.os }}-m2-${{ hashFiles(''**/pom.xml'') }}'
           restore-keys: '${{ runner.os }}-m2'
-  # test:
-  #   name: Test
-  #   needs: build
-  #   runs-on: ubuntu-latest
-  #   steps:
-  #     - name: Checkout repository
-  #       uses: actions/checkout@v2
-  #     - name: ServiceNow DevOps Unit Test Results
-  #       uses: ServiceNow/servicenow-devops-test-report@EPIC1076738
-  #       with:
-  #         devops-integration-user-name: '${{ secrets.SN_DEVOPS_USER }}'
-  #         devops-integration-user-password: '${{ secrets.SN_DEVOPS_PASSWORD }}'
-  #         instance-url: '${{ secrets.SN_INSTANCE_NAME }}'
-  #         tool-id: '${{ secrets.SN_ORCH_TOOL_ID }}'
-  #         job-name: Test
-  #         context-github: '${{ toJSON(github) }}'
-  #         xml-report-filename: .github/workflows/JestFolder/jest-junit.xml
+  test:
+    name: Test
+    needs: build
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+      - name: ServiceNow DevOps Unit Test Results
+        uses: ServiceNow/servicenow-devops-test-report@v3.1.0
+        with:
+          devops-integration-user-name: '${{ secrets.SN_DEVOPS_USER }}'
+          devops-integration-user-password: '${{ secrets.SN_DEVOPS_PASSWORD }}'
+          instance-url: '${{ secrets.SN_INSTANCE_NAME }}'
+          tool-id: '${{ secrets.SN_ORCH_TOOL_ID }}'
+          job-name: Test
+          context-github: '${{ toJSON(github) }}'
+          xml-report-filename: testng.xml
 
   #     - name: ServiceNow DevOps NUnit Test Results
   #       uses: ServiceNow/servicenow-devops-test-report@EPIC1076738
