@@ -38,7 +38,7 @@ jobs:
           tool-id: '${{ secrets.SN_ORCHESTRATION_TOOL_ID }}'
           job-name: Test
           context-github: '${{ toJSON(github) }}'
-          xml-report-filename: Test-Type-Repo/blob/main/NunitFolder/NUnit.xml
+          xml-report-filename: NunitFolder/NUnit.xml
 
 
 
